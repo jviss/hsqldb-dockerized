@@ -1,12 +1,12 @@
 # HSQLDB in a Docker Image
-Exactly what it says on the tin. Useful in Spring and other Java applications. This image uses JDK 12 on Oracle Linux.
+Exactly what it says on the tin. Useful in Spring and other Java applications. This image uses OpenJDK 16 on a slim Debian Buster.
 
-## Release: mitchtalmadge/hsqldb:latest
+## Release: joseviss/hsqldb:latest
 
 # Quick Start
 
 ```
-$ docker run -d -p 9001:9001 --name hsqldb mitchtalmadge/hsqldb
+$ docker run -d -p 9001:9001 --name hsqldb joseviss/hsqldb
 ```
 
 Connection Details: 

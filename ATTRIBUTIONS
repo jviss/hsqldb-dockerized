@@ -1,2 +1,5 @@
 This project was originally forked from Steffen Bleul's hsqldb repository under the MIT License:
 https://github.com/blacklabelops-legacy/hsqldb/blob/master/LICENSE
+
+It was then forked from Mitch Talmadge's hsqldb-dockerized repo under the MIT License:
+https://github.com/MitchTalmadge/hsqldb-dockerized/blob/master/LICENSE

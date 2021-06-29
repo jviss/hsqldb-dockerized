@@ -1,7 +1,10 @@
-FROM openjdk:12.0.2-oracle
+FROM openjdk:16.0.1-slim-buster
+
+RUN apt-get update && apt-get install -y \
+wget
 
 # Image Environment Variables
-ENV HSQLDB_VERSION=2.5.0 \
+ENV HSQLDB_VERSION=2.6.0 \
     JAVA_VM_PARAMETERS= \
     HSQLDB_TRACE= \
     HSQLDB_SILENT= \
@@ -12,15 +15,13 @@ ENV HSQLDB_VERSION=2.5.0 \
     HSQLDB_USER= \
     HSQLDB_PASSWORD= 
 
-# Install Tooling
-RUN yum install -y wget
-      
 # Install HSQLDB
 RUN mkdir -p /opt/database && \
     mkdir -p /opt/hsqldb && \
     chmod -R 777 /opt/database && \
     mkdir -p /scripts && \
-    wget -O /opt/hsqldb/hsqldb.jar http://central.maven.org/maven2/org/hsqldb/hsqldb/${HSQLDB_VERSION}/hsqldb-${HSQLDB_VERSION}.jar
+    wget -O /opt/hsqldb/hsqldb.jar https://repo1.maven.org/maven2/org/hsqldb/hsqldb/${HSQLDB_VERSION}/hsqldb-${HSQLDB_VERSION}.jar
+
 
 # Clean caches and tmps
 RUN rm -rf /tmp/* && \
